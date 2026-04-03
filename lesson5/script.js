@@ -24,9 +24,3 @@ console.log("GitHub")
 // git ✅add .
 // git ✅commit -m "komentariya yozing"
 // git ✅push origin master
-
-// nimaga kirmayapti
-
-// alo
-
-// kim
