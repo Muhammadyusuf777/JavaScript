@@ -19,8 +19,10 @@ console.log("GitHub")
 
 // =====================================
 
-// Doim yangi code yozsak 3 ta ta git buyurig'ini doim ishlatamiz shrt.
+// Doim yangi code yozsak 3 ta ta git buyurig'ini doim ishlatamiz shart.
 
-// git add .
-// git commit -m "komentariya yozing"
-// git push origin master
+// git ✅add .
+// git ✅commit -m "komentariya yozing"
+// git ✅push origin master
+
+// nimaga kirmayapti
