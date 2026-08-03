@@ -1,0 +1,63 @@
+// sh arrayni 2 ga ajratib bering 
+
+// javobi :
+//[1,2,5,6,10]
+//[3,4,7,8]
+
+// let arr = [1,2,3,4,5,6,7,8,9,10]
+
+// let arr1 = []
+// let arr2 = []
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (i % 2 === 0) {
+//         arr1.push(arr[i])
+//     } else {
+//         arr2.push(arr[i])
+//     }
+// }
+// console.log(arr1)
+// console.log(arr2)
+
+// =================================
+
+// random dan foydalanib telefon raqam tayyorla bering
+// javob:+998 99 111 22 33
+
+
+// =====================================
+
+// shuarrayni ichidagi juft raqamlar summasini toping
+
+// let arr3 = [1,2,3,4,5,6,7,8,9,10]
+// let sum = 0;
+// for (let i = 0; i < arr3.length; i++) {
+//     if (arr3[i] % 2 === 0) {
+//         sum += arr3[i];
+//     }
+// }
+// console.log(sum);
+
+// ==============================
+
+// shu str ning "a" va "it" qiymatlarini katta qilib bering
+// Javob : Algoritm IT
+// let str = "algoritm it";
+// let newStr = "";
+
+// for (let i = 0; i < str.length; i++) {
+//     if (i === 0 || (i >= str.length - 2)) {
+//         newStr += str[i].toUpperCase();
+//     } else {
+//         newStr += str[i];
+//     }
+// }
+
+// console.log(newStr);
+// ================================
+// shui str2 da berilgan 1 va 0 ni (i va o) ga almashtirib bering
+// Javob: Men Algoritm o'qiman
+// let str = "Men Alg0r1tm 0'qiman.";
+// str = str.replaceAll("0", "o");
+// str = str.replaceAll("1", "i");
+// console.log(str);

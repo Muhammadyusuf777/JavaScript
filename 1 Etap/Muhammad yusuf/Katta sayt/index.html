@@ -1,0 +1,959 @@
+﻿<!-- <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katta Sayt POS</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #5d4632;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+    }
+    .terminal {
+      width: 1100px;
+      background: #e6d3b4;
+      border: 6px solid #4a2f18;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+    }
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #346692;
+      color: #fff;
+      padding: 10px 18px;
+      font-size: 0.96rem;
+      border-bottom: 3px solid #1f3652;
+    }
+    .terminal-header .time,
+    .terminal-header .title,
+    .terminal-header .ok-button {
+      display: inline-flex;
+      align-items: center;
+    }
+    .terminal-header .time {
+      width: 140px;
+      justify-content: flex-start;
+      font-weight: 700;
+    }
+    .terminal-header .title {
+      flex: 1;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    .terminal-header .ok-button {
+      width: 100px;
+      justify-content: center;
+      background: #f0db90;
+      color: #1f2c3c;
+      border-radius: 8px;
+      font-weight: 700;
+      padding: 10px 0;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+    }
+    .terminal-body {
+      display: grid;
+      grid-template-columns: 1.75fr 1fr;
+      min-height: 700px;
+      background: #f0e5d3;
+    }
+    .left-side {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .status-panel {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 10px;
+      padding: 14px;
+      background: #1d5d99;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.92rem;
+    }
+    .status-panel .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      padding: 10px 8px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      min-height: 82px;
+    }
+    .status-panel .item strong {
+      opacity: 0.82;
+      font-size: 0.85rem;
+    }
+    .status-panel .item span {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .table-card {
+      background: #fcf7ed;
+      border: 2px solid #ccb08b;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+    }
+    .table-head {
+      display: grid;
+      grid-template-columns: 44px 44px 1.3fr 1.5fr 72px 72px 72px 72px 92px;
+      background: #1f5b97;
+      color: #fff;
+      padding: 16px 12px;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      align-items: center;
+    }
+    .table-head div {
+      text-align: center;
+      white-space: nowrap;
+    }
+    .table-body {
+      flex: 1;
+      padding: 16px 12px;
+      background: #f6efe1;
+      overflow: auto;
+      color: #1f1f1f;
+      font-size: 0.94rem;
+    }
+    .table-row {
+      display: grid;
+      grid-template-columns: 44px 44px 1.3fr 1.5fr 72px 72px 72px 72px 92px;
+      gap: 8px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      align-items: center;
+    }
+    .table-row:last-child { border-bottom: none; }
+    .table-row div {
+      text-align: center;
+      white-space: nowrap;
+    }
+    .bottom-bar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(104px, 1fr));
+      gap: 10px;
+      padding-top: 10px;
+    }
+    .shortcut {
+      background: #f7ecd0;
+      border: 1px solid #c9b08a;
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.82rem;
+      color: #2d2216;
+      font-weight: 700;
+      min-height: 70px;
+      justify-content: center;
+    }
+    .shortcut span {
+      color: #4b3d2b;
+      font-size: 0.82rem;
+      opacity: 0.85;
+    }
+    .right-side {
+      padding: 18px 16px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+      background: #ece1c8;
+    }
+    .status-box {
+      background: #4680ad;
+      border-radius: 16px;
+      min-height: 118px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
+    }
+    .button-group {
+      display: grid;
+      gap: 10px;
+    }
+    .button-group button,
+    .right-panel-bottom button {
+      width: 100%;
+      padding: 14px 12px;
+      border: none;
+      border-radius: 14px;
+      font-size: 0.96rem;
+      font-weight: 800;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,.14);
+    }
+    .button-group button:hover,
+    .right-panel-bottom button:hover {
+      transform: translateY(-1px);
+    }
+    .btn-primary { background: #4b7cc5; color: #fff; }
+    .btn-secondary { background: #7a90bb; color: #fff; }
+    .btn-danger { background: #d44848; color: #fff; }
+    .btn-yellow { background: #e4a23a; color: #fff; }
+    .btn-green { background: #3f8a4f; color: #fff; }
+    .btn-doc { background: #2d5a87; color: #fff; }
+    .btn-reserve { background: #2f7b33; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="time">17:13:42</div>
+      <div class="title">Возврат</div>
+      <div class="ok-button">OK</div>
+    </div>
+    <div class="terminal-body">
+      <div class="left-side">
+        <div class="status-panel">
+          <div class="item"><strong>Всего сумма</strong><span>0,000</span></div>
+          <div class="item"><strong>Скидка</strong><span>0,000</span></div>
+          <div class="item"><strong>Сумма</strong><span>0,000</span></div>
+          <div class="item"><strong>Накт F5</strong><span>0,000</span></div>
+          <div class="item"><strong>Терминал F6</strong><span>0,000</span></div>
+          <div class="item" style="background:#064b5a"><strong>OK</strong><span>...</span></div>
+        </div>
+        <div class="table-card">
+          <div class="table-head">
+            <div>N</div>
+            <div>C</div>
+            <div>Код</div>
+            <div>Товар</div>
+            <div>Ост</div>
+            <div>Кол-во</div>
+            <div>ЕдИзм</div>
+            <div>Цена</div>
+            <div>Сумма</div>
+          </div>
+          <div class="table-body" id="table-body">
+            <div class="table-row">
+              <div>1</div>
+              <div>C</div>
+              <div>0000</div>
+              <div>...</div>
+              <div>0</div>
+              <div>0</div>
+              <div>шт</div>
+              <div>0,00</div>
+              <div>0,00</div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <div class="shortcut"><span>Alt+F4</span><strong>Выход</strong></div>
+          <div class="shortcut"><span>Alt+F5</span><strong>Чек</strong></div>
+          <div class="shortcut"><span>Alt+F6</span><strong>Скидка</strong></div>
+          <div class="shortcut"><span>Изм</span><strong>Кол-во</strong></div>
+          <div class="shortcut"><span>Alt+F7</span><strong>Сторно</strong></div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="status-box" id="message">Tugmani bosing</div>
+        <div class="button-group">
+          <button class="btn-primary" data-action="pay-cash">Расчет наличные</button>
+          <button class="btn-primary" data-action="pay-card">Расчет картой</button>
+          <button class="btn-secondary" data-action="pay-check">ОПЛАТА_ЧЕК</button>
+          <button class="btn-secondary" data-action="pay-no-check">ОПЛАТА_БЕЗ</button>
+          <button class="btn-danger" data-action="cancel">ОТМЕНА</button>
+          <button class="btn-yellow" data-action="barcode">ШТРИХ</button>
+          <button class="btn-yellow" data-action="code">КОД</button>
+          <button class="btn-green" data-action="reconcile">АКТ сверка</button>
+          <button class="btn-green" data-action="client-payment">Оплата клиент</button>
+        </div>
+        <div class="right-panel-bottom">
+
+          <button class="btn-doc" data-action="documents">ДОКУМЕНТЫ</button>
+          <button class="btn-reserve" data-action="reserve">БРОН</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POS SYSTEM PRO</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma, sans-serif;
+}
+
+body{
+    background:#2a2a2a;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* MAIN POS */
+
+.pos{
+    width:1550px;
+    height:860px;
+    background:#f4f4f4;
+    border:10px solid #111;
+    overflow:hidden;
+    position:relative;
+}
+
+/* TOP */
+
+.top{
+    height:85px;
+    background:#a0673d;
+    display:grid;
+    grid-template-columns:150px 120px 260px 70px 70px 1fr 150px;
+    gap:4px;
+    padding:4px;
+}
+
+.box{
+    border:2px solid #7d2d2d;
+    background:white;
+}
+
+.clock{
+    background:#4a1d1d;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    font-weight:bold;
+}
+
+.logo{
+    background:#031521;
+    color:#7cff00;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.return{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    color:#17335b;
+}
+
+.icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+}
+
+.search{
+    border:2px solid #7d2d2d;
+    background:#f9d8ce;
+}
+
+.ok{
+    background:#dce6ff;
+    border:2px solid #7d2d2d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    color:#17335b;
+}
+
+/* CONTENT */
+
+.content{
+    display:grid;
+    grid-template-columns:1fr 220px;
+    height:calc(100% - 85px);
+}
+
+/* LEFT */
+
+.left{
+    display:flex;
+    flex-direction:column;
+}
+
+/* SUMMARY */
+
+.summary{
+    background:#a0673d;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:4px;
+    padding:4px;
+}
+
+.sum-box{
+    background:white;
+    border:2px solid #7d2d2d;
+}
+
+.sum-title{
+    background:#0048b5;
+    color:white;
+    text-align:center;
+    padding:6px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.sum-value{
+    text-align:center;
+    padding:14px;
+    font-size:34px;
+    color:#1a3e76;
+    font-weight:bold;
+}
+
+/* TABLE */
+
+.table-wrap{
+    flex:1;
+    background:white;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#0048b5;
+    color:white;
+}
+
+th{
+    padding:10px;
+    border-right:1px solid white;
+    font-size:20px;
+}
+
+tbody td{
+    height:38px;
+    border-bottom:1px solid #ddd;
+    padding-left:8px;
+}
+
+/* BOTTOM */
+
+.bottom{
+    height:90px;
+    background:#a0673d;
+    display:flex;
+    gap:4px;
+    padding:4px;
+}
+
+.bottom-btn{
+    width:120px;
+    background:#ddd;
+    border:2px solid #7d2d2d;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.bottom-btn:hover{
+    background:#ccc;
+}
+
+.bottom-btn span{
+    font-weight:bold;
+}
+
+/* RIGHT PANEL */
+
+.right{
+    background:#a0673d;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding:4px;
+}
+
+.side-btn{
+    flex:1;
+    border:2px solid #7d2d2d;
+    background:linear-gradient(#dce7ff,#9fc0ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:23px;
+    color:#17335b;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.side-btn:hover{
+    transform:scale(1.02);
+}
+
+.red{
+    background:linear-gradient(#ff6d6d,#cb0000);
+    color:white;
+}
+
+.yellow{
+    background:linear-gradient(#fff6a5,#ffd500);
+}
+
+.green{
+    background:linear-gradient(#63ff63,#00b700);
+    color:white;
+    height:90px;
+    font-size:40px;
+}
+
+/* MODAL */
+
+.modal-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal{
+    width:1100px;
+    height:620px;
+    background:#f3f3f3;
+    border:3px solid #777;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    display:flex;
+    flex-direction:column;
+}
+
+/* MODAL TOP */
+
+.modal-top{
+    height:40px;
+    background:linear-gradient(#dbe8ff,#b9d0ff);
+    border-bottom:1px solid #777;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 10px;
+}
+
+.modal-title{
+    font-size:24px;
+    font-weight:bold;
+    color:#444;
+}
+
+.close{
+    width:35px;
+    height:35px;
+    border:none;
+    background:red;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* SEARCH */
+
+.modal-search{
+    padding:10px;
+}
+
+.modal-search input{
+    width:100%;
+    height:42px;
+    border:1px solid #888;
+    padding-left:15px;
+    font-size:18px;
+}
+
+/* PRODUCT TABLE */
+
+.modal-table{
+    flex:1;
+    overflow:auto;
+    background:white;
+    margin:10px;
+    border:1px solid #999;
+}
+
+.modal-table table{
+    width:100%;
+}
+
+.modal-table thead{
+    background:#efefef;
+    color:#333;
+}
+
+.modal-table tbody tr:hover{
+    background:#cfe5ff;
+    cursor:pointer;
+}
+
+.modal-table td{
+    font-size:18px;
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+
+.selected{
+    background:#7eb6ff !important;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="pos">
+
+    <!-- MODAL -->
+    <div class="modal-bg" id="modalBg">
+
+        <div class="modal">
+
+            <div class="modal-top">
+                <div class="modal-title">
+                    Остатка товар
+                </div>
+
+                <button class="close" onclick="closeModal()">
+                    X
+                </button>
+            </div>
+
+            <div class="modal-search">
+                <input type="text" placeholder="Поиск (Ctrl+F)">
+            </div>
+
+            <div class="modal-table">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th>Наименование</th>
+                            <th>Ед изм</th>
+                            <th>Ост</th>
+                            <th>Цена</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="selected">
+                            <td>15802</td>
+                            <td>OYNA MATORCHIK RH ORQA NEXIA XITOY</td>
+                            <td>DONA</td>
+                            <td>10</td>
+                            <td>119999</td>
+                        </tr>
+
+                        <tr>
+                            <td>15803</td>
+                            <td>ORQA SALNIK ZBOR TRACKER</td>
+                            <td>DONA</td>
+                            <td>5</td>
+                            <td>103700</td>
+                        </tr>
+
+                        <tr>
+                            <td>15804</td>
+                            <td>GAZ TROS DOHC KOREA</td>
+                            <td>DONA</td>
+                            <td>8</td>
+                            <td>36000</td>
+                        </tr>
+
+                        <tr>
+                            <td>15805</td>
+                            <td>RADIATOR YONI KRISH</td>
+                            <td>DONA</td>
+                            <td>2</td>
+                            <td>45000</td>
+                        </tr>
+
+                        <tr>
+                            <td>15806</td>
+                            <td>PECHKA KORPUS KICHIK</td>
+                            <td>DONA</td>
+                            <td>12</td>
+                            <td>59000</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TOP -->
+    <div class="top">
+
+        <div class="clock box" id="clock">
+            00:00:00
+        </div>
+
+        <div class="logo box">
+            1ST <br> SOFTWARE
+        </div>
+
+        <div class="return box">
+            Возврат
+        </div>
+
+        <div class="icon box">🤝</div>
+
+        <div class="icon box">💳</div>
+
+        <div class="search"></div>
+
+        <div class="ok">OK</div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <div class="summary">
+
+                <div class="sum-box">
+                    <div class="sum-title">Всего сумма</div>
+                    <div class="sum-value">0,000</div>
+                </div>
+
+                <div class="sum-box">
+                    <div class="sum-title">Скидка</div>
+                    <div class="sum-value">0,000</div>
+                </div>
+
+                <div class="sum-box">
+                    <div class="sum-title">Сумма</div>
+                    <div class="sum-value">0,000</div>
+                </div>
+
+                <div class="sum-box">
+                    <div class="sum-title">Накт F5</div>
+                    <div class="sum-value">0,000</div>
+                </div>
+
+                <div class="sum-box">
+                    <div class="sum-title">Терминал F6</div>
+                    <div class="sum-value">0,000</div>
+                </div>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Код</th>
+                            <th>Товар</th>
+                            <th>Ост</th>
+                            <th>Кол-во</th>
+                            <th>Цена</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>15802</td>
+                            <td>OYNA MATORCHIK RH</td>
+                            <td>10</td>
+                            <td>1</td>
+                            <td>119999</td>
+                            <td>119999</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="bottom">
+
+                <div class="bottom-btn" onclick="openModal()">
+                    <span>F1</span>
+                    Товар
+                </div>
+
+                <div class="bottom-btn">
+                    <span>F2</span>
+                    Чек
+                </div>
+
+                <div class="bottom-btn">
+                    <span>F3</span>
+                    Скидка
+                </div>
+
+                <div class="bottom-btn">
+                    <span>F4</span>
+                    Кол-во
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+
+            <div class="side-btn" onclick="openModal()">
+                Расчет наличе
+            </div>
+
+            <div class="side-btn" onclick="openModal()">
+                Расчет картой
+            </div>
+
+            <div class="side-btn" onclick="openModal()">
+                ОПЛАТА_ЧЕК
+            </div>
+
+            <div class="side-btn" onclick="openModal()">
+                ОПЛАТА_БЕЗ
+            </div>
+
+            <div class="side-btn red">
+                ОТМЕНА
+            </div>
+
+            <div class="side-btn yellow" onclick="openModal()">
+                ШТРИХ КОД
+            </div>
+
+            <div class="side-btn" onclick="openModal()">
+                АКТ сверка
+            </div>
+
+            <div class="side-btn" onclick="openModal()">
+                Оплата клиент
+            </div>
+
+            <div class="side-btn" onclick="openModal()">
+                ДОКУМЕНТЫ
+            </div>
+
+            <div class="side-btn green">
+                БРОН
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* CLOCK */
+
+function updateClock(){
+
+    let now = new Date();
+
+    let h = String(now.getHours()).padStart(2,'0');
+    let m = String(now.getMinutes()).padStart(2,'0');
+    let s = String(now.getSeconds()).padStart(2,'0');
+
+    document.getElementById('clock').innerHTML =
+        `${h}:${m}:${s}`;
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+/* MODAL */
+
+function openModal(){
+    document.getElementById('modalBg').style.display = 'flex';
+}
+
+function closeModal(){
+    document.getElementById('modalBg').style.display = 'none';
+}
+
+/* ESC CLOSE */
+
+document.addEventListener('keydown',function(e){
+
+    if(e.key === "Escape"){
+        closeModal();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

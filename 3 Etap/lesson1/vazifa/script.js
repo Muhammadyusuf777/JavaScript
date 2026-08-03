@@ -145,4 +145,4 @@
 // let newArr = arr.filter((value, index, a) =>{
 //   if(value > 5) return value
 // })
-// console.log(newArr);
+// console.log(newArr);d  
