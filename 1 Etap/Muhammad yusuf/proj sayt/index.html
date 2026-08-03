@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Yusuf - Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>MY PORTFOLIO</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Bosh sahifa</a></li>
+                    <li><a href="#about" class="nav-link">Men haqimda</a></li>
+                    <li><a href="#services" class="nav-link">Xizmatlar</a></li>
+                    <li><a href="#portfolio" class="nav-link">Loyihalar</a></li>
+                    <li><a href="#skills" class="nav-link">Ko'nikmalar</a></li>
+                    <li><a href="#contact" class="nav-link">Bog'lanish</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Assalomu alaikum! Men Muhammad Yusuf</h2>
+                <p class="hero-subtitle">Full Stack Web Developer | UI/UX Designer</p>
+                <p class="hero-description">Zamonaviy va yuqori sifatli veb-saytlar yaratishda ixtisoslashgan professional</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Meni bilan bog'lanish</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('portfolio')">Mening ishlarni ko'rish</button>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="floating-box"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Men haqimda</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Assalomu alaikum! Men Muhammad Yusuf, 5+ yil davomida web development sohasida faol ishlab kelyapman. 
+                    HTML, CSS, JavaScript, React, Node.js va ko'plab zamonaviy texnologiyalardan foydalangan holda, 
+                    sifatli va foydalanuvchi-do'stona veb-saytlar yarataman.</p>
+                    
+                    <p>Mening maqsad - har bir loyiha uchun eng yaxshi yechimni topib, mijozlar bilan uzoq muddatli 
+                    hamkorlikni rivojlantirish. Men innovativ yondashuvga, sifatli ishlashga va har vaqtda yangi 
+                    narsalarni o'rganishga e'tibor beraman.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Tuqiy loyihalar</p>
+                        </div>
+                        <div class="stat">
+                            <h3>30+</h3>
+                            <p>Xursand mijozlar</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Yillik tajriba</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Mening xizmatlar</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Veb-sayt dizayn</h3>
+                    <p>Zamonaviy va jozibali dizaynli veb-saytlar yaratish. Har bir pikseli to'g'ri bo'ladi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Dizayn</h3>
+                    <p>Barcha qurilmada yaxshi ko'rinadigan veb-saytlar. Telefondan desktopmadagi hammasida.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Kuchli backend va veritabanalar bilan ishlash. Data xavfsizligi bizning ustuvorligi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Performance Optimization</h3>
+                    <p>Tez yuklangan va optimizatsiyalangan veb-saytlar. O'zgaruvchi va tezlik bunda.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Xavfsizlik</h3>
+                    <p>Xavfsiz veb-sayt yaratish. Sizning ma'lumotlaringiz bizdan xavfsiz.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Har doim yordamga tayyor. Muammo yuzaga kelsa, biz shu yerda bo'lamiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Mening loyihalar</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterPortfolio('all')">Hamasi</button>
+                <button class="filter-btn" onclick="filterPortfolio('web')">Veb-saytlar</button>
+                <button class="filter-btn" onclick="filterPortfolio('app')">Dasturlar</button>
+                <button class="filter-btn" onclick="filterPortfolio('design')">Dizayn</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-portfolio">
+                            <i class="fas fa-window-maximize"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>Zamonaviy e-commerce veb-sayt. HTML, CSS, JavaScript</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-portfolio">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Todo Application</h3>
+                        <p>Shaxsiy vazifalarni boshqarish uchun dastur</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-portfolio">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Blog Platform</h3>
+                        <p>Ko'p foydalanuvchili blog platformasi. Node.js va MongoDB</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-portfolio">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>UI Design System</h3>
+                        <p>Zamonaviy UI komponentlar majmuasi</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-portfolio">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Weather Application</h3>
+                        <p>Havo ob-havaini ko'rsatadigan veb-dastur</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">API</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder-portfolio">
+                            <i class="fas fa-store"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Corporate Website</h3>
+                        <p>Tashkilot uchun rasmiy veb-sayt</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Mening Ko'nikmalar</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <div class="skill-progress">
+                            <span>HTML/CSS</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>JavaScript</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>React</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>Vue.js</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <div class="skill-progress">
+                            <span>Node.js</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>Express.js</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>MongoDB</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>MySQL</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-list">
+                        <div class="skill-progress">
+                            <span>Git/GitHub</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>Docker</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>AWS</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <span>Figma</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Mijozlar nima deydi</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Muhammad Yusuf bilan ishlash juda ajoyib tajriba bo'ldi. U vaqtida tugatdi va sifat bebaho!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Ali Omonov</h4>
+                            <p>CEO, Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Professional approach, excellent communication, at high quality. I recommend to everyone!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Sardor Ismoilov</h4>
+                            <p>Director, Business Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Loyihalar juda vaqtida taqdimlandi va barcha talablar bajarildi. Rahmat!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Yasmin Karimova</h4>
+                            <p>Founder, Creative Agency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Meni bilan bog'lanish </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Telefon</h3>
+                            <p>+998 95-720-15-00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>muhammadyusuf@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Manzil</h3>
+                            <p>Tashkent, Uzbekistan</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ism" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Mavzu" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Xabar" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Xabar yuborish</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Muhammad Yusuf</h3>
+                    <p>Professional Web Developer & Designer</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tezkor havolalar</h4>
+                    <ul>
+                        <li><a href="#home">Bosh sahifa</a></li>
+                        <li><a href="#about">Men haqimda</a></li>
+                        <li><a href="#services">Xizmatlar</a></li>
+                        <li><a href="#portfolio">Loyihalar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ijtimoiy tarmoqlar</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Muhammad Yusuf. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- QR Code Corners -->
+    <div class="qr-corner qr-top-left">
+        <a href="https://instagram.com/yakubjanovv.726" target="_blank" title="Instagram">
+            <div class="qr-code">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </a>
+    </div>
+    <div class="qr-corner qr-top-right">
+        <a href="https://instagram.com/yakubjanovv.726" target="_blank" title="Instagram">
+            <div class="qr-code">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </a>
+    </div>
+    <div class="qr-corner qr-bottom-left">
+        <a href="https://instagram.com/yakubjanovv.726" target="_blank" title="Instagram">
+            <div class="qr-code">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </a>
+    </div>
+    <div class="qr-corner qr-bottom-right">
+        <a href="https://instagram.com/yakubjanovv.726" target="_blank" title="Instagram">
+            <div class="qr-code">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
