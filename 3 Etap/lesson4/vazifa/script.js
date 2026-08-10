@@ -1,22 +1,3 @@
-// forEach() uchun masalalar
-// 2. Talabalar bahosini tekshirish
-
-const students = [
-    { name: "Ali", ball: 78 },
-    { name: "Vali", ball: 42 },
-    { name: "Sami", ball: 91 }
-];
-
-students.forEach(student => {
-    if (student.ball > 60) {
-        console.log(`${student.name} - O‘tdi`);
-    } else {
-        console.log(`${student.name} - Yiqildi`);
-    }
-});
-
-// 3. Ombordagi mahsulotlarni ogohlantirish
-
 const products = [
     { name: "Shakar", count: 12 },
     { name: "Yog'", count: 3 },
