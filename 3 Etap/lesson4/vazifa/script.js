@@ -1,20 +1,3 @@
-const products = [
-    { name: "Shakar", count: 12 },
-    { name: "Yog'", count: 3 },
-    { name: "Un", count: 25 }
-];
-
-products.forEach(product => {
-    if (product.count < 5) {
-        console.log(`${product.name} - ${product.count} ta (Kam qoldi)`);
-    } else {
-        console.log(`${product.name} - ${product.count} ta`);
-    }
-});
-
-// map() uchun 3 ta masala
-// 1. Foydalanuvchilarni yangi formatga o'tkazish
-
 const users = [
     { name: "Ali", age: 20 },
     { name: "Vali", age: 25 }
