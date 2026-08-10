@@ -11,8 +11,23 @@
 //   }
 // }
 
-for (let i = 1; i <= 50; i++) {
-  if (i % 10 === 0) {
-    console.log(i);
-  }
-}
+// for (let i = 1; i <= 50; i++) {
+//   if (i % 10 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// toq Sonlarni kopaytmasini hisoblang
+// let arr = [1,2,2,3,4,5,6,7,8,9]
+// let product = arr.reduce((acc, cur) => {
+//   if (cur % 2 !== 0) {
+//     return acc * cur;
+//   }
+//   return acc;
+// }, 1);
+// console.log(product);
+
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let sum = arr.reduce((acc, sum) => !(sum % 2) || !(sum % 3) ?acc + sum : acc, 0)
+console.log(sum);
