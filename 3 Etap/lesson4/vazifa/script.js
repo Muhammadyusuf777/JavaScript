@@ -1,81 +1,81 @@
-const users = [
-    { name: "Ali", age: 20 },
-    { name: "Vali", age: 25 }
-];
+// const users = [
+//     { name: "Ali", age: 20 },
+//     { name: "Vali", age: 25 }
+// ];
 
-const newUsers = users.map(user => {
-    return `${user.name} (${user.age} yosh)`;
-});
+// const newUsers = users.map(user => {
+//     return `${user.name} (${user.age} yosh)`;
+// });
 
-console.log(newUsers);
+// console.log(newUsers);
 
 // 2. Narxlarga 12% QQS qo'shish
 
-const prices = [100000, 250000, 80000];
+// const prices = [100000, 250000, 80000];
 
-const pricesWithTax = prices.map(price => {
-    return price * 1.12;
-});
+// const pricesWithTax = prices.map(price => {
+//     return price * 1.12;
+// });
 
-console.log(pricesWithTax);
+// console.log(pricesWithTax);
 
-// 3. Login yaratish
+// // 3. Login yaratish
 
-const names = [
-    "Ali Valiyev",
-    "Sami Karimov",
-    "Olim Hasanov"
-];
+// const names = [
+//     "Ali Valiyev",
+//     "Sami Karimov",
+//     "Olim Hasanov"
+// ];
 
-const logins = names.map(name => {
-    return name.toLowerCase().replaceAll(" ", "_");
-});
+// const logins = names.map(name => {
+//     return name.toLowerCase().replaceAll(" ", "_");
+// });
 
-console.log(logins);
+// console.log(logins);
 
-// filter() uchun 3 ta masala
-// 1. Aktiv foydalanuvchilarni ajratish
+// // filter() uchun 3 ta masala
+// // 1. Aktiv foydalanuvchilarni ajratish
 
-const users2 = [
-    { name: "Ali", active: true },
-    { name: "Vali", active: false },
-    { name: "Sami", active: true }
-];
+// const users2 = [
+//     { name: "Ali", active: true },
+//     { name: "Vali", active: false },
+//     { name: "Sami", active: true }
+// ];
 
-const activeUsers = users2.filter(user => {
-    return user.active === true;
-});
+// const activeUsers = users2.filter(user => {
+//     return user.active === true;
+// });
 
-console.log(activeUsers);
+// console.log(activeUsers);
 
-// 2. Imtihondan o'tganlarni ajratish
+// // 2. Imtihondan o'tganlarni ajratish
 
-const students2 = [
-    { name: "Ali", ball: 56 },
-    { name: "Vali", ball: 88 },
-    { name: "Sami", ball: 71 },
-    { name: "Olim", ball: 44 }
-];
+// const students2 = [
+//     { name: "Ali", ball: 56 },
+//     { name: "Vali", ball: 88 },
+//     { name: "Sami", ball: 71 },
+//     { name: "Olim", ball: 44 }
+// ];
 
-const passedStudents = students2.filter(student => {
-    return student.ball >= 60;
-});
+// const passedStudents = students2.filter(student => {
+//     return student.ball >= 60;
+// });
 
-console.log(passedStudents);
+// console.log(passedStudents);
 
-// 3. Qimmat mahsulotlarni ajratish
+// // 3. Qimmat mahsulotlarni ajratish
 
-const products2 = [
-    { name: "Telefon", price: 3500000 },
-    { name: "Quloqchin", price: 250000 },
-    { name: "Noutbuk", price: 7800000 }
-];
+// const products2 = [
+//     { name: "Telefon", price: 3500000 },
+//     { name: "Quloqchin", price: 250000 },
+//     { name: "Noutbuk", price: 7800000 }
+// ];
 
-const expensiveProducts = products2.filter(product => {
-    return product.price > 1000000;
-});
+// const expensiveProducts = products2.filter(product => {
+//     return product.price > 1000000;
+// });
 
-console.log(expensiveProducts);
+// console.log(expensiveProducts);
 
 // ===============================
 
